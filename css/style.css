@@ -1,0 +1,546 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #1a1a1a;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Dancing Script', cursive;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+nav a.active {
+    color: #ffc107;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    color: white;
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    text-decoration: none;
+}
+
+.order-online {
+    background-color: #ffc107;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+
+main {
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+
+.content {
+    flex: 1;
+    padding: 5% 0 5% 10%;
+    z-index: 2;
+    max-width: 45%;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-family: "Dancing Script", cursive;
+}
+
+p {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.order-now {
+    background-color: #ffc107;
+    color: black;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #1a1a1a, transparent 20%);
+    z-index: 1;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.dots {
+    margin-top: 2rem;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.dot.active {
+    background-color: #ffc107;
+}
+
+
+.offers {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.offer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.offer-card {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: calc(50% - 10px);
+}
+
+.offer-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 3px solid #f39c12;
+}
+
+.offer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offer-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.offer-content p {
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.order-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.menu {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: "Dancing Script", cursive;
+}
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background-color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-btn.active {
+    background-color: #34495e;
+    color: white;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.menu-item-image {
+    height: 200px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 0 0 0 50px;
+}
+
+.menu-item-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.menu-item-content {
+    padding: 20px;
+    background-color: #343a40;
+    color: #fcf7f7;
+}
+
+.menu-item-title {
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.menu-item-description {
+    font-size: 0.9em;
+    margin: 0 0 15px 0;
+    opacity: 0.8;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item-price {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.add-to-cart {
+    background-color: #ffc107;
+    border: none;
+    color: #343a40;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-more {
+    background-color: #ffc107;
+    border: none;
+    color: #343a40;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 30px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+
+.about {
+    background-color: #343a40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin: 20px;
+}
+
+.about-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    width: 55%;
+    color: white;
+    padding-left: 50px;
+}
+
+.about-content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-weight: lighter;
+}
+
+.read-more {
+    background-color: #ffc107;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+
+.booking {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-form {
+    width: 48%;
+}
+
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.book-now {
+    background-color: #ffc107;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.map {
+    width: 48%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.map img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    max-width: 500px;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.testimonial-card p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.testimonial-card h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.customer-title {
+    color: #ffffff;
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.customer-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #ffc107;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.testimonial-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-btn {
+    background-color: #ffc107;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-column h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: "Dancing Script", cursive;
+}
+
+.footer-column p {
+    margin: 5px 0;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-info p::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: black;
+  background-color: white;}
+    .copyright{
+      text-align: center;
+    }
